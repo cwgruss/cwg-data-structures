@@ -6,4 +6,11 @@ describe('LinkedListNode', () => {
         expect(node.value).toBeNull();
         expect(node.next).toBeNull();
     });
+
+    it('should return \'null\' when value is NULL', () => {
+        const node = new LinkedListNode(null);
+        const value = node.toString();
+        expect(typeof value).toBe('string');
+        expect(value).toBe('null');
+    });
 });
