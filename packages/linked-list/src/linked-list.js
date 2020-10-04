@@ -1,9 +1,9 @@
-
-
+/**
+ * A linked-list of nodes
+ */
 export default class linkedList {
-
-    constructor() {
-        this.head = null;
-        this.tail = null;
-    }
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
 }
