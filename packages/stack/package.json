@@ -1,11 +1,11 @@
 {
-  "name": "@cwgruss/queue",
+  "name": "@cwgruss/stack",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Carter Gruss <cwgruss@gmail.com>",
   "homepage": "https://github.com/cwgruss/cwg-data-structures#readme",
   "license": "ISC",
-  "main": "lib/queue.js",
+  "main": "lib/stack.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -28,10 +28,8 @@
   },
   "dependencies": {
     "chai": "^4.2.0",
-    "eslint": "^7.10.0",
     "karma": "^5.2.3",
     "karma-chai": "^0.1.0",
-    "mocha": "^8.1.3",
-    "typescript": "^4.0.3"
+    "mocha": "^8.1.3"
   }
 }
