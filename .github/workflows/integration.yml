@@ -1,0 +1,47 @@
+name: Node Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  setup:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v2
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v1
+        with:
+          key: npm-${{ hashFiles('package-lock.json') }}
+          path: ~/.npm
+          restore-keys: |
+            npm-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+        # Install dependencies
+      - name: Install Node dependencies
+        run: |
+          npm install 
+          npx lerna bootstrap --hoist
+
+      # Run Linter
+      - name: Run linters
+        run: |
+          npx lerna run lint
+
+      # Run unit tests
+      - name: Run Unit Tests
+        run: |
+          npx lerna run test
