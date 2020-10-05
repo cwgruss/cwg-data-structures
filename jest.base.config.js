@@ -1,6 +1,5 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
-const base = require("../../jest.base.config");
 
 module.exports = {
   // All imported modules in your tests should be mocked automatically
@@ -85,7 +84,7 @@ module.exports = {
   // preset: undefined,
 
   // Run tests from one or more projects
-  // projects: undefined,
+  projects: ["<rootDir>/packages/linked-list"],
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,
