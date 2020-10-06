@@ -25,7 +25,8 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src/",
-    "test": "jest --collect-coverage"
+    "test": "npm run test:unit",
+    "test:unit": "jest --collect-coverage"
   },
   "dependencies": {},
   "devDependencies": {
