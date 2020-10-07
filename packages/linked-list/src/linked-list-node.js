@@ -1,26 +1,22 @@
 /**
  * A node element in a linked-list
+ * @param {any} value
+ * @param {LinkedListNode | null} next
  */
-class LinkedListNode {
-	/**
-	 * @param {any} value
-	 * @param {LinkedListNode | null} next
-	 */
-	constructor(value, next = null) {
-		this.value = value;
-		this.next = next;
-	}
+const LinkedListNode = function (value, next = null) {
+	this.value = value;
+	this.next = next;
+};
 
-	/**
-	 * Returns the node as a string value.
-	 *
-	 * @param {toStringLinkedListNodeCallback} callback
-	 * @return {string}
-	 */
-	toString(callback) {
-		return callback ? callback(this.value) : `${this.value}`;
-	}
-}
+/**
+ * Returns the node as a string value.
+ *
+ * @param {toStringLinkedListNodeCallback} callback
+ * @return {string}
+ */
+LinkedListNode.prototype.toString = function (callback) {
+	return callback ? callback(this.value) : `${this.value}`;
+};
 
 export default LinkedListNode;
 
