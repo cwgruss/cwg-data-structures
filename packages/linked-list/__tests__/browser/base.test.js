@@ -1,4 +1,4 @@
-import LinkedList from '../src/linked-list';
+import LinkedList from '../../src/linked-list';
 
 describe('LinkedList', () => {
 	it('should create an empty LinkedList', () => {
