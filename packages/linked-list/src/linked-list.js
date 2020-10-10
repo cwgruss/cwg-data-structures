@@ -19,7 +19,7 @@ LinkedList.prototype.append = function (value) {
 	const newNode = new LinkedListNode(value);
 
 	// # If no head exists, create one
-	if (!this.head) {
+	if (!this.head || !this.tail) {
 		this.head = newNode;
 		this.tail = newNode;
 		this.size = 1;
@@ -116,6 +116,12 @@ LinkedList.prototype.insertAll = function (index, values = []) {
 				this.size += 1;
 			}
 
+			if (!tmpHead || !tmpTail) {
+				// TODO:Throw an error indicating that a sub list count not be created
+				//  Saturday, October 10 2020
+				// ******************************************
+				break;
+			}
 			currentNode.next = tmpHead;
 			tmpTail.next = nextNode;
 			break;
@@ -129,8 +135,22 @@ LinkedList.prototype.insertAll = function (index, values = []) {
 };
 
 LinkedList.prototype.clear = function () {
+	/**
+	 * The length of the LinkedList
+	 * @type {number}
+	 */
 	this.size = 0;
+
+	/**
+	 * A reference to the first node in the LinkedList
+	 * @type {LinkedListNode | null }
+	 */
 	this.head = null;
+
+	/**
+	 * A reference to the last node in the LinkedList
+	 * @type {LinkedListNode | null}
+	 */
 	this.tail = null;
 };
 
