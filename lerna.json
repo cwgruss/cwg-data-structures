@@ -2,5 +2,11 @@
   "packages": [
     "packages/*"
   ],
+  "nohoist": [
+    "@babel/**",
+    "jasmine",
+    "karma",
+    "karma-*"
+  ],
   "version": "0.0.0"
 }
