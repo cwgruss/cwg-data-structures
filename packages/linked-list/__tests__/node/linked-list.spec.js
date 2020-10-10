@@ -65,7 +65,6 @@ describe('LinkedList', () => {
 		list.append(6);
 		list.insertAll(2, [3, 4, 5]);
 
-		console.log(list.toString());
 		expect(list.head).toBeTruthy();
 		expect(list.tail).toBeTruthy();
 		expect(list.size).toBe(6);
@@ -75,6 +74,15 @@ describe('LinkedList', () => {
 		expect(thirdNode.value).toEqual(3);
 		expect(thirdNode.next.value).toEqual(4);
 		expect(thirdNode.next.next.value).toEqual(5);
+	});
+
+	it('should clear all values from a list', () => {
+		const list = new LinkedList();
+		list.appendAll([1, 2, 3, 4]);
+		list.clear();
+		expect(list.size).toEqual(0);
+		expect(list.head).toBeNull();
+		expect(list.tail).toBeNull();
 	});
 
 	it('should be renderable as a string', () => {

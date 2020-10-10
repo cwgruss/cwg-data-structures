@@ -128,6 +128,12 @@ LinkedList.prototype.insertAll = function (index, values = []) {
 	return this;
 };
 
+LinkedList.prototype.clear = function () {
+	this.size = 0;
+	this.head = null;
+	this.tail = null;
+};
+
 /**
  * Returns the linked-list as a string value.
  *
