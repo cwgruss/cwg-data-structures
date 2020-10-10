@@ -9,7 +9,7 @@ export default [
 	{
 		input: 'src/main.js',
 		output: {
-			name: 'linkedList',
+			name: 'linked-list',
 			file: pkg.browser,
 			format: 'umd',
 		},
@@ -21,6 +21,22 @@ export default [
 				exclude: 'node_modules/**',
 			}),
 			terser(),
+		],
+	},
+	{
+		input: 'src/main.js',
+		output: {
+			name: 'linked-list',
+			file: pkg.umd,
+			format: 'umd',
+		},
+		plugins: [
+			resolve(),
+			commonjs(),
+			babel({
+				babelHelpers: 'bundled',
+				exclude: 'node_modules/**',
+			}),
 		],
 	},
 

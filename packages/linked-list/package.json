@@ -14,7 +14,8 @@
   "author": "Carter Gruss <cwgruss@gmail.com>",
   "main": "dist/linked-list.cjs.js",
   "module": "dist/linked-list/esm.js",
-  "browser": "dist/linked-list.umd.js",
+  "umd": "dist/linked-list.umd.js",
+  "browser": "dist/linked-list.umd.min.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
