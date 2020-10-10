@@ -30,7 +30,8 @@
     "test:node": "jasmine --config=jasmine.json",
     "test:headless-browser": "karma start --browsers=ChromeHeadless",
     "test:firefox": "karma start --browsers=Firefox",
-    "test:chrome": "karma start --browsers=Chrome"
+    "test:chrome": "karma start --browsers=Chrome",
+    "coverage": "nyc --reporter=lcov npm run test:node"
   },
   "dependencies": {},
   "devDependencies": {
