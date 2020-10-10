@@ -83,6 +83,52 @@ LinkedList.prototype.appendAll = function (values) {
 };
 
 /**
+ * Inserts all of the values in the specified array into the list, starting at the specified index.
+ * @param {number} index
+ * @param {any[]} values
+ * @return {LinkedList}
+ */
+LinkedList.prototype.insertAll = function (index, values = []) {
+	let currentIndex = 0;
+	let currentNode = this.head;
+
+	if (index >= this.size) {
+		// TODO: Throw an error if the specified index is larger than the size
+		//  Saturday, October 10 2020
+		// ******************************************
+	}
+
+	while (currentNode) {
+		const nextIdndex = currentIndex + 1;
+		const nextNode = currentNode.next;
+		if (nextIdndex === index) {
+			let tmpTail;
+			let tmpHead;
+			for (const value of values) {
+				const newNode = new LinkedListNode(value);
+				if (!tmpTail) {
+					tmpHead = newNode;
+					tmpTail = newNode;
+				} else {
+					tmpTail.next = newNode;
+					tmpTail = newNode;
+				}
+				this.size += 1;
+			}
+
+			currentNode.next = tmpHead;
+			tmpTail.next = nextNode;
+			break;
+		}
+
+		currentIndex = nextIdndex;
+		currentNode = nextNode;
+	}
+
+	return this;
+};
+
+/**
  * Returns the linked-list as a string value.
  *
  * @param {toStringLinkedListNodeCallback} callback
