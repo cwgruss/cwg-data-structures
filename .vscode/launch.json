@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Test Linked List",
+            "name": "Debug Jasmine Tests",
             "type": "node",
             "request": "launch",
             "protocol": "inspector",
@@ -13,19 +13,9 @@
             "outputCapture": "std",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/lerna",
             "runtimeArgs": [
-                "exec",
-                "--scope",
-                "@cwgruss/linked-list",
-                "--",
-                "node"
+                "run",
+                "test"
             ],
-            "args": [
-                "${workspaceRoot}/node_modules/jest/bin/jest.js",
-                "--verbose",
-                "--runInBand",
-                "--no-cache",
-                "packages/linked-list"
-            ]
         }
     ]
 }
