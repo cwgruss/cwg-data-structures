@@ -1,4 +1,11 @@
-
+# Ignore Istanbul Cache
+**/.nyc_output
 
 # Ignore dependencies
-node_modules
+**/node_modules
+
+# Ignore build output
+**/dist/
+
+# Ignore Coverage Reports 
+**/coverage
