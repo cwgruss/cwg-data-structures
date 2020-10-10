@@ -25,9 +25,11 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src/",
-    "test": "npm run test:node && npm run test:browser",
+    "test": "npm run test:node && npm run test:headless-browser",
     "test:node": "jasmine --config=jasmine.json",
-    "test:browser": "karma start"
+    "test:headless-browser": "karma start --browsers=ChromeHeadless",
+    "test:firefox": "karma start --browsers=Firefox",
+    "test:chrome": "karma start --browsers=Chrome"
   },
   "dependencies": {},
   "devDependencies": {
