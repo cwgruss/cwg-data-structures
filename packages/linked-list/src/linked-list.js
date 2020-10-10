@@ -70,6 +70,19 @@ LinkedList.prototype.insert = function (index, value) {
 };
 
 /**
+ * Appends all of the values to the end of the list, in the order they are provided
+ * @param  {any[]} values
+ * @return {LinkedList}
+ */
+LinkedList.prototype.appendAll = function (values) {
+	for (const value of values) {
+		this.append(value);
+	}
+
+	return this;
+};
+
+/**
  * Returns the linked-list as a string value.
  *
  * @param {toStringLinkedListNodeCallback} callback
