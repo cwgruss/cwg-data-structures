@@ -15,6 +15,17 @@ describe('LinkedListNode', () => {
 		expect(headNode.next).toBe(nextNode);
 	});
 
+	describe('clone', () => {
+		it('should create a shallow clone of the node object', () => {
+			const original = new LinkedListNode(2);
+			const clonedNode = original.clone();
+
+			expect(original.prototype).toBe(clonedNode.prototype);
+			expect(original.value).toEqual(clonedNode.value);
+			expect(original === clonedNode).toBeFalse();
+		});
+	});
+
 	describe('toString', () => {
 		it("should return 'null' as a string when value is NULL", () => {
 			const headNode = new LinkedListNode(null);

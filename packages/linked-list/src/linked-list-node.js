@@ -9,6 +9,15 @@ const LinkedListNode = function (value, next = null) {
 };
 
 /**
+ * Returns a shallow copy of the node and its value
+ * @return {LinkedListNode}
+ */
+LinkedListNode.prototype.clone = function () {
+	const copy = Object.assign({}, this);
+	return copy;
+};
+
+/**
  * Returns the node as a string value.
  *
  * @param {toStringLinkedListNodeCallback} callback
