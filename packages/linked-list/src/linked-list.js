@@ -36,6 +36,40 @@ LinkedList.prototype.append = function (value) {
 };
 
 /**
+ * Inserts the specified value at the provided index in the list
+ * @param {number} index
+ * @param {any} value
+ * @return {LinkedList}
+ */
+LinkedList.prototype.insert = function (index, value) {
+	let currentIndex = 0;
+	let currentNode = this.head;
+	const newNode = new LinkedListNode(value);
+
+	if (index >= this.size) {
+		// TODO: Throw an error if the specified index is larger than the size
+		//  Saturday, October 10 2020
+		// ******************************************
+	}
+
+	while (currentNode) {
+		const nextIdndex = (currentIndex += 1);
+		if (nextIdndex === index) {
+			const nextNode = currentNode.next;
+			currentNode.next = newNode;
+			newNode.next = nextNode;
+			this.size += 1;
+			break;
+		}
+
+		currentIndex = nextIdndex;
+		currentNode = currentNode.next;
+	}
+
+	return this;
+};
+
+/**
  * Returns the linked-list as a string value.
  *
  * @param {toStringLinkedListNodeCallback} callback

@@ -1,4 +1,5 @@
 import LinkedList from '../../src/linked-list';
+import LinkedListNode from '../../src/linked-list-node';
 
 describe('LinkedList', () => {
 	it('should create an empty LinkedList', () => {
@@ -30,6 +31,20 @@ describe('LinkedList', () => {
 		expect(list.size).toBe(2);
 		expect(list.head.value).toEqual(1);
 		expect(list.tail.value).toEqual(2);
+	});
+
+	it('should insert a new node at a given index', () => {
+		const list = new LinkedList();
+		list.append(1);
+		list.append(2);
+		list.append(4);
+
+		list.insert(2, 3);
+		expect(list.head).toBeTruthy();
+		expect(list.tail).toBeTruthy();
+		expect(list.size).toBe(4);
+		expect(list.head.value).toEqual(1);
+		expect(list.tail.value).toEqual(4);
 	});
 
 	it('should be able to be printed as a string', () => {
