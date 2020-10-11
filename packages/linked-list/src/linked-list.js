@@ -10,6 +10,22 @@ const LinkedList = function () {
 };
 
 /**
+ * Returns the first node--i.e the head--in the list.
+ * @return {LinkedListNode | null}
+ */
+LinkedList.prototype.getFirst = function () {
+	return this.head;
+};
+
+/**
+ * Returns the last node--i.e. the tail--in this list.
+ * @return {LinkedListNode | null}
+ */
+LinkedList.prototype.getLast = function () {
+	return this.tail;
+};
+
+/**
  * Add a new value to the end of the linked-list,
  * returns the now updated linked-list
  * @param {any} value

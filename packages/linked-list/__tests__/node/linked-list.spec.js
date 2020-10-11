@@ -84,6 +84,30 @@ describe('LinkedList', () => {
 		expect(list.tail).toBeNull();
 	});
 
+	it('should returned the first element in the list', () => {
+		const list = new LinkedList();
+		list.appendAll([1, 2, 3, 4, 5]);
+
+		const firstNode = list.getFirst();
+		const head = list.head;
+		expect(list.size).toEqual(5);
+		expect(head.value).toEqual(1);
+		expect(firstNode.value).toEqual(1);
+		expect(firstNode).toBe(head);
+	});
+
+	it('should returned the last element in the list', () => {
+		const list = new LinkedList();
+		list.appendAll([1, 2, 3, 4, 5]);
+
+		const lastNode = list.getLast();
+		const tail = list.tail;
+		expect(list.size).toEqual(5);
+		expect(tail.value).toEqual(5);
+		expect(lastNode.value).toEqual(5);
+		expect(lastNode).toBe(tail);
+	});
+
 	it('should be renderable as a string', () => {
 		const list = new LinkedList();
 		list.append(1);
